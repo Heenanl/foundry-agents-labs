@@ -17,10 +17,10 @@ Two agent styles are covered:
 
 | Lab | Notebook | Focus |
 |---|---|---|
-| 1 | [Lab 1 - Project Setup.ipynb](Lab%201%20-%20Project%20Setup.ipynb) | Install libraries, connect to your project, test a chat completion |
-| 2 | [Lab 2 - Prompt Agent.ipynb](Lab%202%20-%20Prompt%20Agent.ipynb) | Create + invoke a **prompt agent**; add a new version |
-| 3 | [Lab 3 - Hosted Agent.ipynb](Lab%203%20-%20Hosted%20Agent.ipynb) | Scaffold, deploy (azd) and invoke a **hosted agent** (Responses protocol) |
-| 4 | [Lab 4 - Hosted Agent RAG.ipynb](Lab%204%20-%20Hosted%20Agent%20RAG.ipynb) | Add **RAG** over Azure AI Search + the agent-identity RBAC gotcha |
+| 1 | [labs/Lab 1 - Project Setup.ipynb](labs/Lab%201%20-%20Project%20Setup.ipynb) | Install libraries, connect to your project, test a chat completion |
+| 2 | [labs/Lab 2 - Prompt Agent.ipynb](labs/Lab%202%20-%20Prompt%20Agent.ipynb) | Create + invoke a **prompt agent**; add a new version |
+| 3 | [labs/Lab 3 - Hosted Agent.ipynb](labs/Lab%203%20-%20Hosted%20Agent.ipynb) | Scaffold, deploy (azd) and invoke a **hosted agent** (Responses protocol) |
+| 4 | [labs/Lab 4 - Hosted Agent RAG.ipynb](labs/Lab%204%20-%20Hosted%20Agent%20RAG.ipynb) | Add **RAG** over Azure AI Search + the agent-identity RBAC gotcha |
 
 Run the notebooks in order — each builds on the previous.
 
