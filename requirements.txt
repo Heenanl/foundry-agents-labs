@@ -1,0 +1,19 @@
+# Shared dependencies for all notebook labs
+# Latest Agent Framework + Foundry SDKs
+
+# --- Prompt agents (Lab 2) ---
+azure-ai-projects
+azure-identity
+openai
+
+# --- Hosted agents (Labs 3-4, Agent Framework) ---
+agent-framework
+agent-framework-foundry-hosting
+agent-framework-azure-ai-search
+
+# --- Search index provisioning (Lab 4) ---
+azure-search-documents
+
+# --- Notebook utilities ---
+python-dotenv
+ipykernel
