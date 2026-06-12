@@ -1,0 +1,12 @@
+# Normalize line endings across platforms
+* text=auto
+
+# Jupyter notebooks: always LF (JSON tooling + nbformat are LF-friendly)
+*.ipynb text eol=lf
+
+# Python and config files: LF
+*.py text eol=lf
+*.md text eol=lf
+*.yaml text eol=lf
+*.yml text eol=lf
+*.txt text eol=lf
