@@ -1,7 +1,7 @@
-# Hands-On Labs for Azure AI Foundry Agents
+# Hands-On Labs for Microsoft Foundry Agents
 
 A series of progressive, **notebook-based** labs for building agents on
-[Azure AI Foundry](https://learn.microsoft.com/azure/ai-foundry/), inspired by
+[Microsoft Foundry](https://learn.microsoft.com/azure/ai-foundry/), inspired by
 [Azure/azure-ai-agents-labs](https://github.com/Azure/azure-ai-agents-labs) but
 rewritten to use the **latest Agent Framework + Foundry hosting SDKs** and the
 same patterns used in the parent repository.
