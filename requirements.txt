@@ -11,7 +11,7 @@ agent-framework
 agent-framework-foundry-hosting
 agent-framework-azure-ai-search
 
-# --- Search index provisioning (Lab 4) ---
+# --- Search index provisioning (Labs 2 & 4) ---
 azure-search-documents
 
 # --- Notebook utilities ---
