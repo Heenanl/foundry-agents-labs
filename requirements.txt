@@ -6,8 +6,10 @@ azure-ai-projects
 azure-identity
 openai
 
-# --- Hosted agents (Labs 3-4, Agent Framework) ---
+# --- Agent Framework (Labs 3-5) ---
 agent-framework
+
+# --- Hosted agents (Labs 4-5, Agent Framework) ---
 agent-framework-foundry-hosting
 agent-framework-azure-ai-search
 

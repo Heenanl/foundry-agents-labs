@@ -19,9 +19,10 @@ Two agent styles are covered:
 |---|---|---|
 | 1 | [labs/Lab 1 - Project Setup.ipynb](labs/Lab%201%20-%20Project%20Setup.ipynb) | Install libraries, connect to your project, test a chat completion |
 | 2 | [labs/Lab 2 - Prompt Agent.ipynb](labs/Lab%202%20-%20Prompt%20Agent.ipynb) | Create + invoke a **prompt agent**; add a new version |
-| 3 | [labs/Lab 3 - Hosted Agent.ipynb](labs/Lab%203%20-%20Hosted%20Agent.ipynb) | Scaffold, deploy (azd) and invoke a **hosted agent** (Responses protocol) |
-| 4 | [labs/Lab 4 - Hosted Agent RAG.ipynb](labs/Lab%204%20-%20Hosted%20Agent%20RAG.ipynb) | Add **RAG** over Azure AI Search + the agent-identity RBAC gotcha |
-| 5 | [labs/Lab 5 - Evaluating a RAG Agent.ipynb](labs/Lab%205%20-%20Evaluating%20a%20RAG%20Agent.ipynb) | **Evaluate** the RAG agent: groundedness, citation, out-of-scope refusal + LLM-as-judge |
+| 3 | [labs/Lab 3 - Agent Framework Agent.ipynb](labs/Lab%203%20-%20Agent%20Framework%20Agent.ipynb) | Build an **Agent Framework** agent with a custom tool |
+| 4 | [labs/Lab 4 - Hosted Agent.ipynb](labs/Lab%204%20-%20Hosted%20Agent.ipynb) | Scaffold, deploy (azd) and invoke a **hosted agent** (Responses protocol) |
+| 5 | [labs/Lab 5 - Hosted Agent RAG.ipynb](labs/Lab%205%20-%20Hosted%20Agent%20RAG.ipynb) | Add **RAG** over Azure AI Search + the agent-identity RBAC gotcha |
+| 6 | [labs/Lab 6 - Evaluating a RAG Agent.ipynb](labs/Lab%206%20-%20Evaluating%20a%20RAG%20Agent.ipynb) | **Evaluate** the **prompt agent's** RAG behaviour: groundedness, citation, out-of-scope refusal + LLM-as-judge |
 
 Run the notebooks in order — each builds on the previous.
 
@@ -30,7 +31,7 @@ Run the notebooks in order — each builds on the previous.
 - An **Azure AI Foundry** project with a deployed chat model (e.g. `gpt-4.1` or `gpt-5-mini`)
 - **Python 3.10+**
 - **Azure CLI** signed in: `az login`
-- For hosted agents (Labs 3–4): **Docker** running locally and the **azd AI agent extension**
+- For hosted agents (Labs 4–5): **Docker** running locally and the **azd AI agent extension**
   ```bash
   azd extension install azure.ai.agents
   azd auth login
@@ -58,10 +59,10 @@ Open **Lab 1** and select the `.venv` as the notebook kernel.
 | Identity | Role | Needed for |
 |---|---|---|
 | Your signed-in user | **Azure AI User** (or higher) on the Foundry project | All labs |
-| Your signed-in user | **Search Service Contributor** + **Search Index Data Contributor** on the search service | Lab 4 (provision the index) |
-| **Hosted agent's own identity** | **Search Index Data Reader** on the search service | Lab 4 (the agent queries as its *own* identity, not yours or the project MI) |
+| Your signed-in user | **Search Service Contributor** + **Search Index Data Contributor** on the search service | Lab 5 (provision the index) |
+| **Hosted agent's own identity** | **Search Index Data Reader** on the search service | Lab 5 (the agent queries as its *own* identity, not yours or the project MI) |
 
-> The agent-identity RBAC step is the most common hosted-agent RAG gotcha — Lab 4
+> The agent-identity RBAC step is the most common hosted-agent RAG gotcha — Lab 5
 > automates it by reading the agent's identities from its version definition.
 
 ## License
