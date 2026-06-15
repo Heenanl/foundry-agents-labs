@@ -20,23 +20,30 @@ Two agent styles are covered:
 | 1 | [labs/Lab 1 - Project Setup.ipynb](labs/Lab%201%20-%20Project%20Setup.ipynb) | Install libraries, connect to your project, test a chat completion |
 | 2 | [labs/Lab 2 - Prompt Agent.ipynb](labs/Lab%202%20-%20Prompt%20Agent.ipynb) | Create + invoke a **prompt agent**; add a new version |
 | 3 | [labs/Lab 3 - Agent Framework Agent.ipynb](labs/Lab%203%20-%20Agent%20Framework%20Agent.ipynb) | Build an **Agent Framework** agent with a custom tool |
-| 4 | [labs/Lab 4 - Hosted Agent.ipynb](labs/Lab%204%20-%20Hosted%20Agent.ipynb) | Scaffold, deploy (azd) and invoke a **hosted agent** (Responses protocol) |
-| 5 | [labs/Lab 5 - Hosted Agent RAG.ipynb](labs/Lab%205%20-%20Hosted%20Agent%20RAG.ipynb) | Add **RAG** over Azure AI Search + the agent-identity RBAC gotcha |
-| 6 | [labs/Lab 6 - Evaluating a RAG Agent.ipynb](labs/Lab%206%20-%20Evaluating%20a%20RAG%20Agent.ipynb) | **Evaluate** the **prompt agent's** RAG behaviour: groundedness, citation, out-of-scope refusal + LLM-as-judge |
+| 4 | [labs/Lab 4 - Evaluating a RAG Agent.ipynb](labs/Lab%204%20-%20Evaluating%20a%20RAG%20Agent.ipynb) | **Evaluate** the **prompt agent's** RAG behaviour: groundedness, citation, out-of-scope refusal + LLM-as-judge |
 
 Run the notebooks in order — each builds on the previous.
+
+### Extra: hosted agents (optional)
+
+These optional labs live in [labs/extra-hosted-agents/](labs/extra-hosted-agents/) and require **Docker** plus the **azd AI agent extension**. They show how to package your own container code and deploy it to Foundry as a **hosted agent**.
+
+| Lab | Notebook | Focus |
+|---|---|---|
+| 5 | [labs/extra-hosted-agents/Lab 5 - Hosted Agent.ipynb](labs/extra-hosted-agents/Lab%205%20-%20Hosted%20Agent.ipynb) | Scaffold, deploy (azd) and invoke a **hosted agent** (Responses protocol) |
+| 6 | [labs/extra-hosted-agents/Lab 6 - Hosted Agent RAG.ipynb](labs/extra-hosted-agents/Lab%206%20-%20Hosted%20Agent%20RAG.ipynb) | Add **RAG** over Azure AI Search + the agent-identity RBAC gotcha |
 
 ## Prerequisites
 
 - An **Azure AI Foundry** project with a deployed chat model (e.g. `gpt-4.1` or `gpt-5-mini`)
 - **Python 3.10+**
 - **Azure CLI** signed in: `az login`
-- For hosted agents (Labs 4–5): **Docker** running locally and the **azd AI agent extension**
+- For Lab 4 (and the hosted RAG lab): an **Azure AI Search** service
+- For the extra hosted-agent labs (Labs 5–6): **Docker** running locally and the **azd AI agent extension**
   ```bash
   azd extension install azure.ai.agents
   azd auth login
   ```
-- For Lab 4: an **Azure AI Search** service
 
 ## Quick start
 
@@ -59,10 +66,10 @@ Open **Lab 1** and select the `.venv` as the notebook kernel.
 | Identity | Role | Needed for |
 |---|---|---|
 | Your signed-in user | **Azure AI User** (or higher) on the Foundry project | All labs |
-| Your signed-in user | **Search Service Contributor** + **Search Index Data Contributor** on the search service | Lab 5 (provision the index) |
-| **Hosted agent's own identity** | **Search Index Data Reader** on the search service | Lab 5 (the agent queries as its *own* identity, not yours or the project MI) |
+| Your signed-in user | **Search Service Contributor** + **Search Index Data Contributor** on the search service | Lab 2 (provision + seed the index); Lab 6 re-provisions it for the hosted agent |
+| **Hosted agent's own identity** | **Search Index Data Reader** on the search service | Lab 6 (the agent queries as its *own* identity, not yours or the project MI) |
 
-> The agent-identity RBAC step is the most common hosted-agent RAG gotcha — Lab 5
+> The agent-identity RBAC step is the most common hosted-agent RAG gotcha — Lab 6
 > automates it by reading the agent's identities from its version definition.
 
 ## License
